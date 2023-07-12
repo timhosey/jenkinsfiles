@@ -27,7 +27,7 @@ spec:
     stages {
         stage('Main') {
             steps {
-                sh 'hostname'
+                sh 'mvn --version'
             }
         }
     }
