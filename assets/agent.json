@@ -1,92 +1,34 @@
 {
-  "_class" : "hudson.slaves.SlaveComputer",
-  "actions" : [
-    {
-      
-    },
-    {
-      
-    },
-    {
-      
-    },
-    {
-      "_class" : "nectar.plugins.rbac.roles.Roles"
-    },
-    {
-      
-    },
-    {
-      
-    }
+  "name": "podman-rhel8",
+  "nodeDescription": "agent description",
+  "numExecutors": "1",
+  "remoteFS": "/var/jenkins/",
+  "labelString": "podman podman-rhel8",
+  "mode": "NORMAL",
+  "": [
+    "hudson.plugins.sshslaves.SSHLauncher",
+    "hudson.slaves.RetentionStrategy$Always"
   ],
-  "assignedLabels" : [
-    {
-      "name" : "podman"
-    },
-    {
-      "name" : "podman-rhel8"
-    }
-  ],
-  "description" : "",
-  "displayName" : "podman-rhel8",
-  "executors" : [
-    {
-      
-    },
-    {
-      
-    }
-  ],
-  "icon" : "symbol-computer",
-  "iconClassName" : "symbol-computer",
-  "idle" : true,
-  "jnlpAgent" : false,
-  "launchSupported" : true,
-  "loadStatistics" : {
-    "_class" : "hudson.model.Label$1"
+  "launcher": {
+    "stapler-class": "hudson.plugins.sshslaves.SSHLauncher",
+    "$class": "hudson.plugins.sshslaves.SSHLauncher",
+    "host": "fakehec2-3-84-163-147.compute-1.amazonaws.comost",
+    "credentialsId": "ec2-host",
+    "port": "22",
+    "javaPath": "",
+    "jvmOptions": "",
+    "prefixStartSlaveCmd": "",
+    "suffixStartSlaveCmd": "",
+    "launchTimeoutSeconds": "",
+    "maxNumRetries": "",
+    "retryWaitTime": ""
   },
-  "manualLaunchAllowed" : true,
-  "monitorData" : {
-    "hudson.node_monitors.SwapSpaceMonitor" : {
-      "_class" : "hudson.node_monitors.SwapSpaceMonitor$MemoryUsage2",
-      "availablePhysicalMemory" : 13452075008,
-      "availableSwapSpace" : 0,
-      "totalPhysicalMemory" : 16593797120,
-      "totalSwapSpace" : 0
-    },
-    "hudson.node_monitors.TemporarySpaceMonitor" : {
-      "_class" : "hudson.node_monitors.DiskSpaceMonitorDescriptor$DiskSpace",
-      "timestamp" : 1695050316735,
-      "path" : "/tmp",
-      "size" : 3272667136
-    },
-    "com.cloudbees.jenkins.plugins.nodesplus.OwnerNodeProperty$NodeMonitorImpl" : null,
-    "hudson.node_monitors.DiskSpaceMonitor" : {
-      "_class" : "hudson.node_monitors.DiskSpaceMonitorDescriptor$DiskSpace",
-      "timestamp" : 1695050316619,
-      "path" : "/var/lib/jenkins",
-      "size" : 3272667136
-    },
-    "com.cloudbees.jenkins.plugins.foldersplus.SecurityTokensNodeProperty$NodeMonitorImpl" : null,
-    "hudson.node_monitors.ArchitectureMonitor" : "Linux (amd64)",
-    "hudson.node_monitors.ResponseTimeMonitor" : {
-      "_class" : "hudson.node_monitors.ResponseTimeMonitor$Data",
-      "timestamp" : 1695050316632,
-      "average" : 5
-    },
-    "hudson.node_monitors.ClockMonitor" : {
-      "_class" : "hudson.util.ClockDifference",
-      "diff" : 0
-    }
+  "retentionStrategy": {
+    "stapler-class": "hudson.slaves.RetentionStrategy$Always",
+    "$class": "hudson.slaves.RetentionStrategy$Always"
   },
-  "numExecutors" : 2,
-  "offline" : false,
-  "offlineCause" : null,
-  "offlineCauseReason" : "",
-  "oneOffExecutors" : [
-    
-  ],
-  "temporarilyOffline" : false,
-  "absoluteRemotePath" : "/var/lib/jenkins"
+  "nodeProperties": {
+    "stapler-class-bag": "true"
+  },
+  "type": "hudson.slaves.DumbSlave"
 }
