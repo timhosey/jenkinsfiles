@@ -17,7 +17,7 @@ pipeline {
                 // "$jenkins_url/computer/doCreateItem"; \\
                 // echo"""
 
-                sh 'curl -v -XPOST -u $jenkins_user:$jenkins_token -H "Content-Type:application/x-www-form-urlencoded" -d \'json=\$(cat assets/agent.json)\' "$jenkins_url/computer/doCreateItem'
+                sh "curl -v -XPOST -u $jenkins_user:$jenkins_token -H 'Content-Type:application/x-www-form-urlencoded' -d \'json=\$(cat assets/agent.json)\' '$jenkins_url/computer/doCreateItem'"
             }
         }
     }
