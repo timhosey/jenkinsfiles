@@ -14,7 +14,7 @@ pipeline {
                 sh """curl -L -s -o /dev/null -w "%{http_code}" -u $jenkins_user:$jenkins_token \\
                 -H "Content-Type:application/x-www-form-urlencoded" -X POST \\
                 -d "json=\$(cat assets/agent.json)" \\
-                "$jenkins_url/computer/doCreateItem?name=my_jenkins_slave&type=hudson.slaves.DumbSlave"; \\
+                "$jenkins_url/computer/api"; \\
                 echo"""
             }
         }
