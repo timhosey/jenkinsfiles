@@ -1,0 +1,92 @@
+{
+  "_class" : "hudson.slaves.SlaveComputer",
+  "actions" : [
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "nectar.plugins.rbac.roles.Roles"
+    },
+    {
+      
+    },
+    {
+      
+    }
+  ],
+  "assignedLabels" : [
+    {
+      "name" : "podman"
+    },
+    {
+      "name" : "podman-rhel8"
+    }
+  ],
+  "description" : "",
+  "displayName" : "podman-rhel8",
+  "executors" : [
+    {
+      
+    },
+    {
+      
+    }
+  ],
+  "icon" : "symbol-computer",
+  "iconClassName" : "symbol-computer",
+  "idle" : true,
+  "jnlpAgent" : false,
+  "launchSupported" : true,
+  "loadStatistics" : {
+    "_class" : "hudson.model.Label$1"
+  },
+  "manualLaunchAllowed" : true,
+  "monitorData" : {
+    "hudson.node_monitors.SwapSpaceMonitor" : {
+      "_class" : "hudson.node_monitors.SwapSpaceMonitor$MemoryUsage2",
+      "availablePhysicalMemory" : 13452075008,
+      "availableSwapSpace" : 0,
+      "totalPhysicalMemory" : 16593797120,
+      "totalSwapSpace" : 0
+    },
+    "hudson.node_monitors.TemporarySpaceMonitor" : {
+      "_class" : "hudson.node_monitors.DiskSpaceMonitorDescriptor$DiskSpace",
+      "timestamp" : 1695050316735,
+      "path" : "/tmp",
+      "size" : 3272667136
+    },
+    "com.cloudbees.jenkins.plugins.nodesplus.OwnerNodeProperty$NodeMonitorImpl" : null,
+    "hudson.node_monitors.DiskSpaceMonitor" : {
+      "_class" : "hudson.node_monitors.DiskSpaceMonitorDescriptor$DiskSpace",
+      "timestamp" : 1695050316619,
+      "path" : "/var/lib/jenkins",
+      "size" : 3272667136
+    },
+    "com.cloudbees.jenkins.plugins.foldersplus.SecurityTokensNodeProperty$NodeMonitorImpl" : null,
+    "hudson.node_monitors.ArchitectureMonitor" : "Linux (amd64)",
+    "hudson.node_monitors.ResponseTimeMonitor" : {
+      "_class" : "hudson.node_monitors.ResponseTimeMonitor$Data",
+      "timestamp" : 1695050316632,
+      "average" : 5
+    },
+    "hudson.node_monitors.ClockMonitor" : {
+      "_class" : "hudson.util.ClockDifference",
+      "diff" : 0
+    }
+  },
+  "numExecutors" : 2,
+  "offline" : false,
+  "offlineCause" : null,
+  "offlineCauseReason" : "",
+  "oneOffExecutors" : [
+    
+  ],
+  "temporarilyOffline" : false,
+  "absoluteRemotePath" : "/var/lib/jenkins"
+}
