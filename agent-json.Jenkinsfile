@@ -14,7 +14,7 @@ pipeline {
                 sh """curl -L -s -o /dev/null -w "%{http_code}" -u $jenkins_user:$jenkins_token \\
                 -H "Content-Type:application/x-www-form-urlencoded" -X POST \\
                 -d "json=\$(cat assets/agent.json)" \\
-                "$jenkins_url/computer/api"; \\
+                "$jenkins_url/computer/api/json"; \\
                 echo"""
             }
         }
