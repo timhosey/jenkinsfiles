@@ -45,8 +45,7 @@ spec:
         stage('JUnit test') {
             steps {
                 // show directories
-                sh 'ls -al ./target'
-                sleep 200
+                junit stdioRetention: '', testResults: 'target/test-reports/*.xml'
             }
         }
         stage('Archive Maven artifact') {
