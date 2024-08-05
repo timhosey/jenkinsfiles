@@ -45,7 +45,7 @@ spec:
         stage('JUnit test') {
             steps {
                 // show directories
-                junit stdioRetention: '', testResults: 'target/test-reports/*.xml'
+                junit stdioRetention: '', testResults: 'target/surefire-reports/*.xml'
             }
         }
         stage('Archive Maven artifact') {
