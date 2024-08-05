@@ -25,9 +25,27 @@ spec:
         }
     }
     stages {
-        stage('Main') {
+        stage('Test Maven Version') {
             steps {
                 sh 'mvn --version'
+            }
+        }
+        stage('Checkout Maven code') {
+            steps {
+                // checkout sample Maven project
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/jenkins-docs/simple-java-maven-app.git']])
+            }
+        }
+        stage('Build Maven project') {
+            steps {
+                // build Maven
+                sh 'mvn clean package'
+            }
+        }
+        stage('Archive Maven artifact') {
+            steps {
+                // archive artifact
+                archiveArtifacts artifacts: '*.jar', followSymlinks: false
             }
         }
     }
