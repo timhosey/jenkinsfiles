@@ -45,7 +45,8 @@ spec:
         stage('JUnit test') {
             steps {
                 // show directories
-                sh 'ls -al'
+                sh 'ls -al ./target'
+                sleep 200
             }
         }
         stage('Archive Maven artifact') {
