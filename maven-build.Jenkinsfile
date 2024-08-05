@@ -45,7 +45,6 @@ spec:
         stage('JUnit test') {
             steps {
                 // show directories
-                sh 'ls ./target/surefire-reports'
                 junit stdioRetention: '', testResults: 'target/surefire-reports/*.xml'
             }
         }
