@@ -39,13 +39,19 @@ spec:
         stage('Build Maven project') {
             steps {
                 // build Maven
+                sh 'mvn clean verify package'
+            }
+        }
+        stage('JUnit test') {
+            steps {
+                // build Maven
                 sh 'mvn clean package'
             }
         }
         stage('Archive Maven artifact') {
             steps {
                 // archive artifact
-                archiveArtifacts artifacts: '*.jar', followSymlinks: false
+                archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
             }
         }
     }
