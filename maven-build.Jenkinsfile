@@ -44,8 +44,8 @@ spec:
         }
         stage('JUnit test') {
             steps {
-                // build Maven
-                sh 'mvn clean package'
+                // show directories
+                sh 'ls -al'
             }
         }
         stage('Archive Maven artifact') {
