@@ -8,8 +8,8 @@ apiVersion: v1
 kind: Pod
 spec:
   containers:
-  - name: maven
-    image: maven
+  - name: ubuntu
+    image: ubuntu:latest
     command:
     - sleep
     args:
@@ -21,7 +21,7 @@ spec:
             // container('shell') {
             //     sh 'hostname'
             // }
-            defaultContainer 'maven'
+            defaultContainer 'ubuntu'
         }
     }
     stages {
