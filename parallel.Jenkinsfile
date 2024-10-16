@@ -24,7 +24,7 @@ pipeline {
             parallel {
                 stage('Find files > 1Gig') {
                     steps {
-                        sh 'find / -size +1G -ls -ignore_readdir_race'
+                        sh 'find / -size +50M -ls -ignore_readdir_race'
                     }
                 }
                 stage('List all files and directories') {
