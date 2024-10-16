@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: msbuild
+    image: timhosey/msbuild-jenkins-agent
+    command:
+    - sleep
+    args:
+    - infinity
