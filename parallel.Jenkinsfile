@@ -24,7 +24,7 @@ pipeline {
             parallel {
                 stage('List all files and directories') {
                     steps {
-                        sh """ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//  /g' -e 's/^/   /'"""
+                        sh 'ls -R /'
                     }
                 }
                 stage('Maven') {
