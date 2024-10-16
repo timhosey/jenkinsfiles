@@ -24,7 +24,7 @@ pipeline {
             parallel {
                 stage('Find files > 1Gig') {
                     steps {
-                        sh 'find / -type f -size +1G'
+                        sh 'find / -size +1G -ls'
                     }
                 }
                 stage('List all files and directories') {
