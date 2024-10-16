@@ -22,7 +22,7 @@ pipeline {
         stage('Run Parallel Executions') {
             /* Begin Parallel Stages */
             parallel {
-                stage('List all files larger than 10M') {
+                stage('List all files larger than 5M') {
                     steps {
                         sh 'find . -type f -size +5M -ignore_readdir_race'
                     }
