@@ -24,7 +24,7 @@ pipeline {
             parallel {
                 stage('List all files and directories') {
                     steps {
-                        sh 'ls -R /'
+                        sh 'ls -R /; exit 1'
                     }
                 }
                 stage('Maven') {
