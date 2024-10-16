@@ -47,18 +47,7 @@ spec:
                     agent {
                         kubernetes {
                             // Rather than inline YAML, in a multibranch Pipeline you could use: yamlFile 'jenkins-pod.yaml'
-                            yaml '''
-apiVersion: v1
-kind: Pod
-spec:
-containers:
-- name: maven
-    image: maven
-    command:
-    - sleep
-    args:
-    - infinity
-'''
+                            yamlFile 'maven.yaml'
                             // Also can create a Kubernetes Pod Template and reference it instead of YAML
 
                             // Can also wrap individual steps:
