@@ -32,6 +32,9 @@ pipeline {
         }
         stage('Archive artifacts') {
             steps {
+                echo '** Listing PWD'
+                sh 'ls ./'
+                echo '*** Listing ./out'
                 sh 'ls ./out'
             }
         }
