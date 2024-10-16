@@ -47,6 +47,9 @@ pipeline {
         }
         stage('End of Run') {
             steps {
+                container('jnlp') {
+                    sleep 9999
+                }
                 sh 'End of Execution!'
             }
         }
