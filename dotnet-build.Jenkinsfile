@@ -33,7 +33,7 @@ pipeline {
         stage('Archive artifacts') {
             steps {
                 sh 'tar czf dotnet-build.tar.gz ./out/'
-                sh 'ls ./'
+                archiveArtifacts artifacts: './dotnet-build.tar.gz', followSymlinks: false
             }
         }
     }
