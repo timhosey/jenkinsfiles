@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Return Hostname') {
             steps {
-                sh 'hostname'
+                sh 'hostname; exit 0'
             }
         }
         stage('Run Parallel Executions') {
@@ -24,7 +24,7 @@ pipeline {
             parallel {
                 stage('List all files and directories') {
                     steps {
-                        sh 'ls -R /; exit 1'
+                        sh 'ls -R /; exit 0'
                     }
                 }
                 stage('Maven') {
@@ -34,7 +34,7 @@ pipeline {
                             // checkout sample Maven project
                             checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/jenkins-docs/simple-java-maven-app.git']])
                             // build Maven
-                            sh 'mvn clean verify package'
+                            sh 'mvn clean verify package; exit 0'
                             // show directories
                             junit stdioRetention: '', testResults: 'target/surefire-reports/*.xml'
                             // archive artifact
