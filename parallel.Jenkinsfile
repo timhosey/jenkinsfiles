@@ -22,9 +22,14 @@ pipeline {
         stage('Run Parallel Executions') {
             /* Begin Parallel Stages */
             parallel {
+                stage('List all files larger than 10M') {
+                    steps {
+                        sh 'find . -type f -size +5M -ignore_readdir_race'
+                    }
+                }
                 stage('List all files and directories') {
                     steps {
-                        sh 'ls -R /; exit 0'
+                        sh 'ls -R /'
                     }
                 }
                 stage('Maven') {
@@ -34,7 +39,7 @@ pipeline {
                             // checkout sample Maven project
                             checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/jenkins-docs/simple-java-maven-app.git']])
                             // build Maven
-                            sh 'mvn clean verify package; exit 0'
+                            sh 'mvn clean verify package'
                             // show directories
                             junit stdioRetention: '', testResults: 'target/surefire-reports/*.xml'
                             // archive artifact
