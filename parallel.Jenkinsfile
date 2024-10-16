@@ -22,11 +22,6 @@ pipeline {
         stage('Run Parallel Executions') {
             /* Begin Parallel Stages */
             parallel {
-                stage('Find files > 1Gig') {
-                    steps {
-                        sh 'find / -size +50M -ls -ignore_readdir_race'
-                    }
-                }
                 stage('List all files and directories') {
                     steps {
                         sh "find / -print | sort|sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
