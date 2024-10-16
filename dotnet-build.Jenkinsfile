@@ -25,9 +25,25 @@ spec:
         }
     }
     stages {
-        stage('Main') {
+        stage('Confirm .NET version') {
             steps {
                 sh 'dotnet --version'
+            }
+        }
+        stage('Checkout code') {
+            steps {
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/doddatpivotal/dotnet-hello-world.git']])
+            }
+        }
+        stage('Build project') {
+            steps {
+                sh 'mkdir out'
+                sh 'dotnet build -o ./out'
+            }
+        }
+        stage('Archive artifacts') {
+            steps {
+                sh 'ls ./out'
             }
         }
     }

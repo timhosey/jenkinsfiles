@@ -8,3 +8,9 @@ spec:
     - sleep
     args:
     - infinity
+  - name: maven
+    image: maven
+    command:
+    - sleep
+    args:
+    - infinity

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 spec:
-containers:
-- name: maven
-  image: maven
-  command:
-  - sleep
-  args:
-  - infinity
+  containers:
+  - name: maven
+    image: maven
+    command:
+    - sleep
+    args:
+    - infinity
