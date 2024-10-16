@@ -32,12 +32,8 @@ pipeline {
         }
         stage('Archive artifacts') {
             steps {
-                echo '** Listing PWD'
+                sh 'gzip -r ./out'
                 sh 'ls ./'
-                echo '*** Listing ./hello-world-api'
-                sh 'ls ./hello-world-api'
-                echo '*** Listing ./out'
-                sh 'ls ./out'
             }
         }
     }
