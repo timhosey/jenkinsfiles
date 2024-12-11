@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Return Hostname') {
             steps {
-                sh 'hostname; exit 0'
+                sh 'hostname'
             }
         }
         stage('Run Parallel Executions') {
