@@ -50,6 +50,11 @@ pipeline {
             }
             /* End Parallel Stages */
         }
+        stage('list with bad exit') {
+            steps {
+                sh 'ls; exit 1'
+            }
+        }
         stage('End of Run') {
             steps {
                 echo 'End of Execution!'
