@@ -53,7 +53,7 @@ pipeline {
             steps {
                 echo "Fail? ${TOGGLE}"
                 script {
-                    if ($TOGGLE == 'true') {
+                    if (TOGGLE == 'true') {
                         error('Failed step')
                     }
                 }
