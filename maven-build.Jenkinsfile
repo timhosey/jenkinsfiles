@@ -52,6 +52,11 @@ pipeline {
             }
             steps {
                 echo "Fail? ${TOGGLE}"
+                script {
+                    if ($TOGGLE == 'true') {
+                        error('Failed step')
+                    }
+                }
             }
         }
         stage('Archive Maven artifact') {
