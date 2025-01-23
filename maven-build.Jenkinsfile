@@ -46,10 +46,12 @@ pipeline {
         stage('Optional Fail Stage') {
             input {
                 message "Fail stage?"
-                id "simple-input"
+                parameters {
+                    booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+                }
             }
             steps {
-                echo "Fail? ${simple-input}"
+                echo "Fail? ${TOGGLE}"
             }
         }
         stage('Archive Maven artifact') {
