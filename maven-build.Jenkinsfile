@@ -46,7 +46,9 @@ pipeline {
                 message "Fail stage?"
                 id "simple-input"
             }
-            echo "Fail? ${simple-input}"
+            steps {
+                echo "Fail? ${simple-input}"
+            }
         }
         stage('Archive Maven artifact') {
             steps {
