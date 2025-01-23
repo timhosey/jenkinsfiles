@@ -39,7 +39,9 @@ pipeline {
         }
         stage('Skipped Stage') {
             when { environment name: 'DEPLOY_TO', value: 'production' }
-            echo "Env: ${DEPLOY_TO}"
+            steps {
+                echo "Env: ${DEPLOY_TO}"
+            }
         }
         stage('Optional Fail Stage') {
             input {
