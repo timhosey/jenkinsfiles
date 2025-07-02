@@ -37,6 +37,28 @@ pipeline {
                 junit stdioRetention: '', testResults: 'target/surefire-reports/*.xml'
             }
         }
+        stage('Skipped Stage') {
+            when { environment name: 'DEPLOY_TO', value: 'production' }
+            steps {
+                echo "Env: ${DEPLOY_TO}"
+            }
+        }
+        stage('Optional Fail Stage') {
+            input {
+                message "Fail stage?"
+                parameters {
+                    booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+                }
+            }
+            steps {
+                echo "Fail? ${TOGGLE}"
+                script {
+                    if (TOGGLE == 'true') {
+                        error('Failed step')
+                    }
+                }
+            }
+        }
         stage('Archive Maven artifact') {
             steps {
                 // archive artifact
